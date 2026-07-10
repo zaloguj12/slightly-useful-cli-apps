@@ -10,7 +10,7 @@ DB_PATH = Path.home() / f".{APP_NAME}" / "databases" / "notes.db"
 
 
 def init_db():
-    DB_PATH.parent.mkdir(exist_ok=True)
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
