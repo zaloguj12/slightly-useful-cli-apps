@@ -1,6 +1,9 @@
 import scripts.calculator
+import scripts.notes
 import random
 import math
+
+scripts.notes.init_db()
 
 
 def calc(operation_calc):
@@ -34,13 +37,11 @@ def calc(operation_calc):
 
 while True:
     selected_option = input()
-    operation_calc = "null"
     if selected_option == "help":
         print("Here is a list of avaiable commands:")
         print("note")
         print("calc")
         print("color")
-        print("unit")
         print("help")
         print("exit")
     elif selected_option == "exit":
@@ -49,3 +50,9 @@ while True:
         print("What operation?")
         print("+ - * /")
         calc(input())
+    elif selected_option == "note":
+        scripts.notes.notes_menu()
+    elif selected_option == "color":
+        break
+    else:
+            print("type help for commands")
