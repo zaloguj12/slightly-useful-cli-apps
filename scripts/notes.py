@@ -59,7 +59,7 @@ def create_note():
 
 def list_notes():
     conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor
+    cursor = conn.cursor()
     
     cursor.execute("SELECT id, title, created_at FROM notes")
     
